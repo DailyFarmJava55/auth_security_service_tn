@@ -1,5 +1,6 @@
 package telran.auth.dto;
 
+import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
@@ -16,6 +17,6 @@ public class CredentialResponseDto {
     private UUID id;
     private String email;
     private Set<Role> role;
-    private UUID userId;
+    private Map<Role, UUID> userIdsByRole;
 }
 

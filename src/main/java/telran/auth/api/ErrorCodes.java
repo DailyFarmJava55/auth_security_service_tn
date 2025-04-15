@@ -5,6 +5,7 @@ public interface ErrorCodes {
     String NOT_FOUND = "NOT_FOUND"; 
     String CONFLICT = "CONFLICT";     
     String INTERNAL_SERVER_ERROR = "INTERNAL_SERVER_ERROR";
+    String UNAUTHORIZED = "Invalid email or password";
 	
 	
 	String ORDER_NOT_FOUND = "error.order.not_found";

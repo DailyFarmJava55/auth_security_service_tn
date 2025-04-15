@@ -9,8 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import telran.auth.dto.AuthRequestDto;
+import telran.auth.dto.AuthResponseDto;
 import telran.auth.dto.CredentialResponseDto;
 import telran.auth.dto.CustomerRegisterDto;
+import telran.auth.entity.Role;
 import telran.auth.service.CredentialService;
 
 @RestController
@@ -23,5 +26,11 @@ public class AuthCustomerController {
     public ResponseEntity<CredentialResponseDto> registerCustomer(@Valid @RequestBody CustomerRegisterDto dto) {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(credentialService.registerCustomer(dto));
+    }
+    
+    @PostMapping("/login")
+    public ResponseEntity<AuthResponseDto> login(@RequestBody AuthRequestDto requestDto) {
+        AuthResponseDto response = credentialService.login(requestDto, Role.CUSTOMER);
+        return ResponseEntity.ok(response);
     }
 }
