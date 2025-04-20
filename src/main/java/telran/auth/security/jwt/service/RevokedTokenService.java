@@ -1,4 +1,4 @@
-package telran.auth.security;
+package telran.auth.security.jwt.service;
 
 public interface RevokedTokenService {
 	void revokeToken(String token);

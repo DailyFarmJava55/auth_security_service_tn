@@ -1,4 +1,4 @@
-package telran.auth.security;
+package telran.auth.security.jwt;
 
 import java.io.IOException;
 import java.util.List;
@@ -17,6 +17,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import telran.auth.entity.Role;
+import telran.auth.security.jwt.service.JwtService;
+import telran.auth.security.jwt.service.RevokedTokenService;
 
 @RequiredArgsConstructor
 @Slf4j
@@ -31,7 +33,8 @@ public class JwtAuthFilter extends OncePerRequestFilter{
             "/auth/farmer/login",
             "/auth/customer/register",
             "/auth/farmer/register",
-            "/auth/refresh"
+            "/auth/customer/refresh",
+            "/auth/farmer/refresh"
             
     );
 	

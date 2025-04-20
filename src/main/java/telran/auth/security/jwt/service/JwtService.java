@@ -1,4 +1,4 @@
-package telran.auth.security;
+package telran.auth.security.jwt.service;
 
 import java.security.Key;
 import java.util.Date;
